@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MaterialObject", menuName = "ScriptableObjects/InspectableObject", order = 1)]
+[CreateAssetMenu(fileName = "MaterialObject", menuName = "ScriptableObjects/MaterialObject", order = 1)]
 public class MaterialObject : ScriptableObject
 {
     public Sprite sprite;

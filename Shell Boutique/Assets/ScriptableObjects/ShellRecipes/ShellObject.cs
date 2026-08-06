@@ -8,7 +8,7 @@ public class MaterialAmount
     public int amount;
 }
 
-[CreateAssetMenu(fileName = "ShellObject", menuName = "ScriptableObjects/InspectableObject", order = 1)]
+[CreateAssetMenu(fileName = "ShellObject", menuName = "ScriptableObjects/ShellObject", order = 1)]
 public class ShellObject : ScriptableObject
 {
     public List<MaterialAmount> recipe;

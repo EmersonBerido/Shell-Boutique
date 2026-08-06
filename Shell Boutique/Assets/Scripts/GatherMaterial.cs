@@ -1,16 +1,22 @@
 using UnityEngine;
 
-public class GatherMaterial : MonoBehaviour
+/*
+    After entering the hit box, prompt user to hit action button
+    Give material immediately if not holding an item
+*/
+public class GatherMaterial : Interactable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private ScriptableObject material;
 
-    // Update is called once per frame
-    void Update()
+    public override void OnInteract()
     {
-        
+        // check if player has object equipped
+        if (Equipment.Instance.GetEquipped() != null) return;
+
+        // create copy of obj
+        ScriptableObject obj = Instantiate(material);
+
+        // give obj to player equipped
+        Equipment.Instance.Equip(obj);
     }
 }
