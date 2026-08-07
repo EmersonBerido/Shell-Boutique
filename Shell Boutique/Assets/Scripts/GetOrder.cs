@@ -64,6 +64,7 @@ public class GetOrder : MonoBehaviour
         {
             DeliverOrder.Instance.AddOrder(order);
             Debug.Log($"adding new order of {order}");
+            OrderUI.Instance.AddOrder(order);
             yield return new WaitForSeconds(orderIntervals);
         }
         yield return null;

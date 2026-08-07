@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 [System.Serializable]
 public class Order
@@ -61,9 +62,11 @@ public class DeliverOrder : Interactable
         if (matchedOrder != null)
         {
             Debug.Log("Found a correct order");
-            orders.Remove(matchedOrder);
+            Debug.LogWarning("Still need to remove completed order from UI");
             Equipment.Instance.Unequip();
             GetOrder.Instance.FinishedOrder();
+            OrderUI.Instance.RemoveOrder(matchedOrder);
+            orders.Remove(matchedOrder);
         } else 
             Debug.Log("Found no matching orders");
         

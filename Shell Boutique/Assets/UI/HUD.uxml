@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Order" src="project://database/Assets/UI/Order.uxml?fileID=9197481963319205126&amp;guid=6413f69a4c63c18419ad58bb1f6e2aab&amp;type=3#Order"/>
+    <Style src="project://database/Assets/HUD.uss?fileID=7433441132597879392&amp;guid=3e5b8648e6349b0418de554cb8579629&amp;type=3#HUD"/>
+    <ui:VisualElement name="Panel" style="flex-grow: 1;">
+        <ui:VisualElement name="OrdersContainer" style="flex-grow: 0; position: absolute; top: 0%; width: 100%; height: 20%; flex-direction: row; flex-wrap: nowrap; align-items: center; justify-content: space-evenly; padding-top: 1%;">
+            <ui:Instance template="Order" name="Order" style="height: 100%;"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
