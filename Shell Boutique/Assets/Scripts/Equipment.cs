@@ -1,9 +1,11 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Equipment : MonoBehaviour
 {
   public static Equipment Instance {get; private set;}
   private ScriptableObject equipped;
+  [SerializeField] private Canvas UI;
+  [SerializeField] private Image image;
 
   void Awake()
   {
@@ -24,10 +26,28 @@ public class Equipment : MonoBehaviour
     if (obj == null) return;
 
     equipped = obj;
-    Debug.Log($"Equipped a object");
+    UI.enabled = true;
+
+    // set sprite
+    if (obj.GetType() == typeof(MaterialObject))
+    {
+      MaterialObject newObj = (MaterialObject)obj;
+      image.sprite = newObj.sprite;
+    } else if (obj.GetType() == typeof(DyeObject))
+    {
+      DyeObject newObj = (DyeObject)obj;
+      image.sprite = newObj.sprite;
+    } else if (obj.GetType() == typeof(ShellObject))
+    {
+      ShellObject newObj = (ShellObject)obj;
+      image.sprite = newObj.sprite;
+    } else return;
+
   }
   public void Unequip()
   {
     equipped = null;
+
+    UI.enabled = false;
   }
 }

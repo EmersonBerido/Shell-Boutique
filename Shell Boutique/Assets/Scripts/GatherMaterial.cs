@@ -10,6 +10,7 @@ public class GatherMaterial : Interactable
 
     public override void OnInteract()
     {
+        Debug.Log("Interacted with Furncase");
         // check if player has object equipped
         if (Equipment.Instance.GetEquipped() != null) return;
 

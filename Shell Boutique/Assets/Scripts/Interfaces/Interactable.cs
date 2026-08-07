@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public abstract class Interactable : MonoBehaviour {
   [SerializeField] private Canvas popupUI;
   [SerializeField] private InputActionReference interactAction;
+  private bool isEnabled = false;
 
   void OnTriggerEnter2D(Collider2D other)
   {
@@ -14,6 +15,7 @@ public abstract class Interactable : MonoBehaviour {
     Debug.LogWarning("Interact with this object");
 
     interactAction.action.Enable();
+    isEnabled = true;
     popupUI.enabled = true;
   }
 
@@ -22,6 +24,7 @@ public abstract class Interactable : MonoBehaviour {
     if (!other.CompareTag("Player")) return;
     
     interactAction.action.Disable();
+    isEnabled = false;
     popupUI.enabled = false;
   }
 
@@ -29,7 +32,7 @@ public abstract class Interactable : MonoBehaviour {
 
   void Update()
   {
-    if (!interactAction.action.enabled) return;
+    if (!isEnabled) return;
 
     if (interactAction.action.WasPressedThisFrame())
       OnInteract();

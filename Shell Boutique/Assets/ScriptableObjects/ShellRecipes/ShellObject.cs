@@ -12,5 +12,5 @@ public class MaterialAmount
 public class ShellObject : ScriptableObject
 {
     public List<MaterialAmount> recipe;
-    public GameObject prefab;
+    public Sprite sprite;
 }
