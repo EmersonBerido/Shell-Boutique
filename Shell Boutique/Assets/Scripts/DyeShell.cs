@@ -33,6 +33,7 @@ public class DyeShell : Interactable
             MixColor(heldDyes[0].color, heldDyes[1].color);
 
         Equipment.Instance.Equip(heldShell, color);
+        heldShell.currColor = color;
 
         heldShell = null;
         heldDyes.Clear();
