@@ -119,6 +119,55 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &15179138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 15179140}
+  - component: {fileID: 15179139}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &15179139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15179138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 749506b17a89dd7468042122d344355d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GetOrder
+  orderIntervals: 10
+  MinOrders: 1
+  MaxOrders: 3
+  shells:
+  - {fileID: 11400000, guid: d320989593b749c48aab1f43d5d2ecf9, type: 2}
+--- !u!4 &15179140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15179138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.99445, y: 1.01184, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &34448249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2473,9 +2522,7 @@ MonoBehaviour:
   red: {r: 0.8862745, g: 0.23921569, b: 0.23921569, a: 1}
   blue: {r: 0.27058825, g: 0.29411766, b: 1, a: 1}
   yellow: {r: 0.90588236, g: 1, b: 0.14901961, a: 1}
-  orders:
-  - shell: {fileID: 11400000, guid: d320989593b749c48aab1f43d5d2ecf9, type: 2}
-    color: 4
+  orders: []
 --- !u!61 &1101031969
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3528,3 +3575,4 @@ SceneRoots:
   - {fileID: 500863793}
   - {fileID: 1061582166}
   - {fileID: 1101031971}
+  - {fileID: 15179140}

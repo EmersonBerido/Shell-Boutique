@@ -11,6 +11,8 @@ public class Order
 
 public class DeliverOrder : Interactable
 {
+    public static DeliverOrder Instance {get; private set;}
+
     [Header("Verification")]
     [SerializeField] private Color red;
     [SerializeField] private Color blue;
@@ -20,7 +22,19 @@ public class DeliverOrder : Interactable
     private Color purple;
 
     public List<Order> orders = new();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Debug.Log("Instance found");
+            Destroy(gameObject);
+            return;
+        } else
+        {
+            Instance = this;
+        }
+    }
     void Start()
     {
         orange = MixColor(red, yellow);
@@ -49,9 +63,18 @@ public class DeliverOrder : Interactable
             Debug.Log("Found a correct order");
             orders.Remove(matchedOrder);
             Equipment.Instance.Unequip();
+            GetOrder.Instance.FinishedOrder();
         } else 
             Debug.Log("Found no matching orders");
         
+    }
+
+    public void AddOrder(Order newOrder)
+    {
+        if (newOrder == null)
+            return;
+
+        orders.Add(newOrder);
     }
 
     private bool VerifyShell(ShellObject order, ShellObject received)
