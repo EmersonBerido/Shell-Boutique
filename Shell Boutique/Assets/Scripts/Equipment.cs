@@ -4,8 +4,7 @@ public class Equipment : MonoBehaviour
 {
   public static Equipment Instance {get; private set;}
   private ScriptableObject equipped;
-  [SerializeField] private Canvas UI;
-  [SerializeField] private Image image;
+  [SerializeField] private SpriteRenderer sr;
 
   void Awake()
   {
@@ -20,27 +19,29 @@ public class Equipment : MonoBehaviour
   }
 
   public ScriptableObject GetEquipped() => equipped;
-  public void Equip(ScriptableObject obj)
+  public void Equip(ScriptableObject obj, Color color = default)
   {
     if (equipped != null) return;
     if (obj == null) return;
+    if (color == default) color = Color.white;
 
     equipped = obj;
-    UI.enabled = true;
+    sr.enabled = true;
+    sr.color = color;
 
     // set sprite
     if (obj.GetType() == typeof(MaterialObject))
     {
       MaterialObject newObj = (MaterialObject)obj;
-      image.sprite = newObj.sprite;
+      sr.sprite = newObj.sprite;
     } else if (obj.GetType() == typeof(DyeObject))
     {
       DyeObject newObj = (DyeObject)obj;
-      image.sprite = newObj.sprite;
+      sr.sprite = newObj.sprite;
     } else if (obj.GetType() == typeof(ShellObject))
     {
       ShellObject newObj = (ShellObject)obj;
-      image.sprite = newObj.sprite;
+      sr.sprite = newObj.sprite;
     } else return;
 
   }
@@ -48,6 +49,6 @@ public class Equipment : MonoBehaviour
   {
     equipped = null;
 
-    UI.enabled = false;
+    sr.enabled = false;
   }
 }

@@ -13,4 +13,5 @@ public class ShellObject : ScriptableObject
 {
     public List<MaterialAmount> recipe;
     public Sprite sprite;
+    public Color currColor; // this will not be the requested color
 }
