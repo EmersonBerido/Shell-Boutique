@@ -18,6 +18,8 @@ public class GetOrder : MonoBehaviour
     [Header("Orders")]
     [SerializeField] List<ShellObject> shells;
 
+    // coroutines
+    private IEnumerator countdown;
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,7 +34,7 @@ public class GetOrder : MonoBehaviour
     }
     void Start()
     {
-        StartNewRound();
+        StartCoroutine(DayTimeUI.Instance.PrepareNewDay());
     }
     public void StartNewRound()
     {
@@ -42,7 +44,14 @@ public class GetOrder : MonoBehaviour
         ordersCompletedThisRound = 0;
         DayTimeUI.Instance.StartNewDay();
 
+        if (countdown != null)
+            StopCoroutine(countdown);
+        countdown = DayTimeUI.Instance.CountDownTime();
+        StartCoroutine(countdown);
+
         StartCoroutine(RoundRoutine());
+        PlayerMovement.Instance.enabled = true;
+
     }
     public void FinishedOrder()
     {

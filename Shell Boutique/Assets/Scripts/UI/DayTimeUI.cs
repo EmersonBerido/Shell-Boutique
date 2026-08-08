@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -24,10 +25,13 @@ public class DayTimeUI : MonoBehaviour
 
 
     [Header("UI")]
+    [SerializeField] List<string> countdownText = new();
     [SerializeField] private UIDocument uiDocument;
     private Image timeImage;
     private Label dayLabel;
     private Label timeLabel;
+
+    private IEnumerator countdown;
 
     void Awake()
     {
@@ -41,10 +45,8 @@ public class DayTimeUI : MonoBehaviour
         }
     }
 
-    IEnumerator Start()
+    public IEnumerator CountDownTime()
     {
-        FindReferences();
-
         while (true)
         {
             UpdateTime();
@@ -54,6 +56,9 @@ public class DayTimeUI : MonoBehaviour
 
     public void StartNewDay()
     {
+        if (timeImage == null)
+            FindReferences();
+
         hour = startHour;
         minute = 0;
         day += 1;
@@ -63,8 +68,34 @@ public class DayTimeUI : MonoBehaviour
         timeImage.sprite = MorningSprite;
     }
 
+    public IEnumerator PrepareNewDay()
+    {
+        // disable player movement
+        PlayerMovement.Instance.enabled = false;
+
+        // count down
+        var container = uiDocument.rootVisualElement
+            .Q<VisualElement>("DayStart");
+        container.RemoveFromClassList("Disabled");
+
+        var label = container.Q<Label>("Countdown");
+        label.text = "";
+        foreach (var text in countdownText)
+        {
+            yield return new WaitForSeconds(1f);
+            label.text = text;
+        }
+        yield return new WaitForSeconds(1f);
+        container.AddToClassList("Disabled");
+
+        GetOrder.Instance.StartNewRound();
+    }
+
     private void UpdateTime()
     {
+        if (timeImage == null)
+            FindReferences();
+
         minute += 1;
         if (minute >= 60)
             RegisterNewHour();
@@ -80,6 +111,9 @@ public class DayTimeUI : MonoBehaviour
         if (hour >= hourCutOff && DeliverOrder.Instance.OrdersRemain())
         {
             Debug.LogWarning("Game end!");
+            PlayerPrefs.SetInt("day", day);
+            PlayerPrefs.Save();
+            return;
         }
 
         // check if change to new time

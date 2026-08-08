@@ -42,6 +42,9 @@ public class BuffsUI : MonoBehaviour
 
     public void LayoutBuffs()
     {
+        // stop player movement
+        PlayerMovement.Instance.enabled = false;
+
         uiDocument.enabled = true;
         var panel = uiDocument.rootVisualElement.Q<VisualElement>("Panel");
         var bContainer = panel.Q<VisualElement>("Buffs");
@@ -63,7 +66,7 @@ public class BuffsUI : MonoBehaviour
         {
           ApplyBuff();
           uiDocument.enabled = false;  
-          GetOrder.Instance.StartNewRound();
+          StartCoroutine(DayTimeUI.Instance.PrepareNewDay());
         };
 
     }
@@ -111,6 +114,14 @@ public class BuffsUI : MonoBehaviour
         parent.RegisterCallback<ClickEvent>(evt =>
         {
             Debug.Log("clicked");
+
+            foreach (var child in container.Children())
+            {
+                var buff = child.Q<VisualElement>("Buff");
+                buff.RemoveFromClassList("Selected");
+            }
+            buffContainer.AddToClassList("Selected");
+
             SelectBuff(buff);
         });
 

@@ -25,3 +25,7 @@
     border-top-color: rgb(0, 0, 0);
     border-bottom-color: rgb(0, 0, 0);
 }
+
+.Disabled {
+    visibility: hidden;
+}
