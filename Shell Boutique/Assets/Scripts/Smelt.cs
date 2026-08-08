@@ -33,9 +33,13 @@ public class Smelt : Interactable
         // else
         //     Debug.LogWarning("Failed to smelt object");
     }
+    public void UpdateSmeltTime(float time)
+    {
+        Debug.Log("Updating Furnace");
+        smeltTime = time;
+    }
     public override void OnInteract()
     {
-        Debug.Log("Interacted with furncase");
         if (isSmelting)
             return;
 

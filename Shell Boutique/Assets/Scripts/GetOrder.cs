@@ -51,8 +51,8 @@ public class GetOrder : MonoBehaviour
             // Prompt UI to give selectable buffs
             Debug.Log("Completed all orders this round");
 
-            Debug.LogWarning("Starting new round, but later add buff cards");
-            StartNewRound();
+            BuffsUI.Instance.LayoutBuffs();
+            
         }
     }
 

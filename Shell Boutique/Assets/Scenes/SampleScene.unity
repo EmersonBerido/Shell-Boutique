@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GetOrder
   orderIntervals: 10
   MinOrders: 1
-  MaxOrders: 3
+  MaxOrders: 2
   shells:
   - {fileID: 11400000, guid: d320989593b749c48aab1f43d5d2ecf9, type: 2}
 --- !u!4 &15179140
@@ -206,7 +206,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1041701631}
     m_Modifications:
     - target: {fileID: 5174840292579289001, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_Name
@@ -270,19 +270,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 5.81
+      value: 5.92525
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.83
+      value: 11.48954
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1142,6 +1142,116 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.11, y: 4.9}
   m_EdgeRadius: 0
+--- !u!1 &608681472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 608681476}
+  - component: {fileID: 608681475}
+  - component: {fileID: 608681474}
+  - component: {fileID: 608681473}
+  m_Layer: 5
+  m_Name: BuffManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &608681473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 855aec40d0269a346a29c24124c3c486, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StatManager
+  basePlayerSpeed: 5
+  maxPlayerSpeed: 12
+  furnaces:
+  - {fileID: 500863789}
+  baseFurnaceSpeed: 8
+  minFurnaceSpeed: 1
+--- !u!114 &608681474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608681472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f593eb348ff8c45409ab74c6cf2e5369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuffsUI
+  buffs:
+  - type: 1
+    percentage: 10
+    title: Furnace Speed
+    description: this will increase the speed of furnace
+    effect: Furnace speed is increased by 10%
+  - type: 2
+    percentage: 10
+    title: Player Speed
+    description: this will increase the speed of player
+    effect: Player speed is increased by 10%
+  - type: 3
+    percentage: 0
+    title: Additional Furnace
+    description: One more furnace
+    effect: +1 furnace
+  emptyBuff:
+    type: 0
+    percentage: 0
+    title: None
+    description: done done
+    effect: nothing
+  uiDocument: {fileID: 608681475}
+--- !u!114 &608681475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608681472}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.UIElements.UIDocument
+  m_PanelSettings: {fileID: 11400000, guid: 3eb51e9206da9c048b4b64f0fbaa42b7, type: 2}
+  m_ParentUI: {fileID: 0}
+  sourceAsset: {fileID: 9197481963319205126, guid: bb40acd058aefd048b2d862fb4d8bc1f, type: 3}
+  m_SortingOrder: 1
+  m_Position: 0
+  m_WorldSpaceSizeMode: 1
+  m_WorldSpaceWidth: 1920
+  m_WorldSpaceHeight: 1080
+  m_PivotReferenceSize: 0
+  m_Pivot: 0
+  m_WorldSpaceCollider: {fileID: 0}
+--- !u!4 &608681476
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608681472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1474,11 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!224 &690341762 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
+  m_PrefabInstance: {fileID: 64528083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &706594338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2221,6 +2336,10 @@ Transform:
   - {fileID: 1186806606}
   - {fileID: 1802261874}
   - {fileID: 1231859882}
+  - {fileID: 1283210623}
+  - {fileID: 1807381354}
+  - {fileID: 690341762}
+  - {fileID: 1711771483}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1061582162
@@ -2723,8 +2842,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1283210619}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.62, y: -2.02, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.50475, y: -0.36045992, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2732,7 +2851,7 @@ Transform:
   - {fileID: 155792823}
   - {fileID: 1433412592}
   - {fileID: 5281601330007815587}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1041701631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1351324268
 PrefabInstance:
@@ -2937,7 +3056,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3734,15 +3853,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711771481}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.14, y: 3.38, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -12.024751, y: 5.0395403, z: 0}
   m_LocalScale: {x: 1.5127, y: 1.5127, z: 1.5127}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1061582166}
   - {fileID: 1633590398}
   - {fileID: 706594340}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1041701631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1736497769
 GameObject:
@@ -4012,6 +4131,11 @@ Transform:
   - {fileID: 1040351199}
   m_Father: {fileID: 1041701631}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!224 &1807381354 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
+  m_PrefabInstance: {fileID: 6220444465081293410}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1854876169
 GameObject:
   m_ObjectHideFlags: 0
@@ -4742,7 +4866,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1041701631}
     m_Modifications:
     - target: {fileID: 5174840292579289001, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_Name
@@ -4810,11 +4934,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10.64
+      value: -10.524751
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 9.8
+      value: 11.45954
       objectReference: {fileID: 0}
     - target: {fileID: 7864955959228435466, guid: 67caaa3ed00430446aaebabf7002c298, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4903,9 +5027,6 @@ SceneRoots:
   - {fileID: 15179140}
   - {fileID: 1041701631}
   - {fileID: 1964403647}
-  - {fileID: 6220444465081293410}
-  - {fileID: 1711771483}
-  - {fileID: 64528083}
   - {fileID: 859568316}
-  - {fileID: 1283210623}
   - {fileID: 1854876171}
+  - {fileID: 608681476}

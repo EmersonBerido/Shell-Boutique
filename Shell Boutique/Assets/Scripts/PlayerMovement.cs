@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+  public static PlayerMovement Instance {get; private set;}
   [SerializeField] private float baseMoveSpeed = 5;
   private float moveSpeed;
   [SerializeField] private InputActionReference moveAction;
@@ -14,6 +15,15 @@ public class PlayerMovement : MonoBehaviour
   {
     rb = GetComponent<Rigidbody2D>();
     moveSpeed = baseMoveSpeed;
+
+    if (Instance != null && Instance != this)
+    {
+      Destroy(gameObject);
+      return;
+    } else
+    {
+      Instance = this;
+    }
   }
 
   void OnEnable()
@@ -30,6 +40,12 @@ public class PlayerMovement : MonoBehaviour
     moveAction.action.Disable();
     
   }
+
+  public void UpdateSpeed(float newSpeed)
+  {
+    moveSpeed = newSpeed;
+  }
+  public float GetInitialSpeed() => baseMoveSpeed;
 
   private void OnMove(InputAction.CallbackContext ctx)
   {
