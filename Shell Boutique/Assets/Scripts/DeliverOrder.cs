@@ -80,6 +80,8 @@ public class DeliverOrder : Interactable
         orders.Add(newOrder);
     }
 
+    public bool OrdersRemain() => orders.Count > 0;
+
     private bool VerifyShell(ShellObject order, ShellObject received)
     {
         if (!order.Equals(received))

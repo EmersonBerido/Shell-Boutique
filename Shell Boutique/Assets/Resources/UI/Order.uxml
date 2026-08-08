@@ -1,4 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Order.uss?fileID=7433441132597879392&amp;guid=51177f2f8f90f3d4c966a9a8497a9926&amp;type=3#Order"/>
     <ui:VisualElement name="Order" class="Order" style="align-items: center;">
         <ui:VisualElement name="MaterialContainer" style="flex-grow: 0; width: 100%; align-items: center; justify-content: space-between; flex-direction: row;">
             <ui:Label text="Iron&#10;Steel&#10;Rainbows " name="Materials" style="-unity-text-align: middle-left;"/>

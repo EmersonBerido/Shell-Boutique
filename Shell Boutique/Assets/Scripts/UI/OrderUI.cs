@@ -20,7 +20,7 @@ public class OrderUI : MonoBehaviour
         }
     }
 
-    public void AddOrder(Order order)
+  public void AddOrder(Order order)
     {
         var root = uiDocument.rootVisualElement;
         var panel = root.Q<VisualElement>("Panel");
