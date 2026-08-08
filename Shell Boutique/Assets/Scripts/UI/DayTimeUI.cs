@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class DayTimeUI : MonoBehaviour
@@ -113,6 +114,7 @@ public class DayTimeUI : MonoBehaviour
             Debug.LogWarning("Game end!");
             PlayerPrefs.SetInt("day", day);
             PlayerPrefs.Save();
+            SceneManager.LoadScene("Ending");
             return;
         }
 
