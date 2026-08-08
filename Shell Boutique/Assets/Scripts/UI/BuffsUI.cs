@@ -26,7 +26,6 @@ public class BuffsUI : MonoBehaviour
     void Start()
     {
         uiDocument.enabled = false;
-        LayoutBuffs();
         
     } 
     void Awake()
@@ -59,7 +58,6 @@ public class BuffsUI : MonoBehaviour
         if (bContainer.Query<BuffComponent>().ToList().Count == 0)
             AddBuff(bContainer, emptyBuff);
 
-        Debug.Log($"there are {bContainer.Query<BuffComponent>().ToList().Count} buffs after adding");
         // add done button logic
         doneButton.clicked += () =>
         {

@@ -45,7 +45,10 @@ public class OrderUI : MonoBehaviour
         {
             var c = curr.Q<VisualElement>("Order");
             if (VerifyMaterials(c, order) && VerifyColor(c, order))
+            {
                 container.Remove(curr);
+                break;
+            }
         }
     }
 

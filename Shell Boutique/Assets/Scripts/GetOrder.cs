@@ -22,6 +22,7 @@ public class GetOrder : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
+            Debug.Log("Instance found", Instance);
             Destroy(gameObject);
             return;
         } else
@@ -39,6 +40,7 @@ public class GetOrder : MonoBehaviour
         OrdersThisRound = CreateNewOrders();
         totalOrdersThisRound = OrdersThisRound.Count;
         ordersCompletedThisRound = 0;
+        DayTimeUI.Instance.StartNewDay();
 
         StartCoroutine(RoundRoutine());
     }
