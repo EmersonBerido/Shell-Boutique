@@ -2,8 +2,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class PlayerMovement : MonoBehaviour
 {
+  private static readonly int IsRunningHash = Animator.StringToHash("isRunning");
+
   public static PlayerMovement Instance {get; private set;}
   [SerializeField] private float baseMoveSpeed = 5;
   private float moveSpeed;
@@ -53,17 +56,17 @@ public class PlayerMovement : MonoBehaviour
     if (ctx.canceled)
     {
       moveInput = Vector2.zero;
-      animator.SetBool("isRunning", false);
+      animator.SetBool(IsRunningHash, false);
       return;
     }
-    
+
     moveInput = ctx.ReadValue<Vector2>();
     if (moveInput.x < 0)
       GetComponent<SpriteRenderer>().flipX = true;
     else 
       GetComponent<SpriteRenderer>().flipX = false;
 
-    animator.SetBool("isRunning", true);
+    animator.SetBool(IsRunningHash, true);
   }
 
   private void FixedUpdate()

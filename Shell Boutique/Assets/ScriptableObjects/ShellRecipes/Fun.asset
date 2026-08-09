@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bf5de7471c3d0ac4db3e6abf975f8ca2, type: 3}
-  m_Name: FailedShell
+  m_Name: Fun
   m_EditorClassIdentifier: Assembly-CSharp::ShellObject
-  recipe: []
-  sprite: {fileID: 7612135089760566114, guid: 8b87fe74cfc2fbb4c98cde9c88d93693, type: 3}
+  recipe:
+  - material: {fileID: 11400000, guid: 67c871eed7e2e49428a22118265b2068, type: 2}
+    amount: 1
+  - material: {fileID: 11400000, guid: eaa1ae27c0b2924438c66144ee6f2f87, type: 2}
+    amount: 1
+  - material: {fileID: 11400000, guid: 63052f6eaa19c764d842db0fc6e340ff, type: 2}
+    amount: 1
+  sprite: {fileID: -936329972801521658, guid: 53ead6058792ea349b1a43e6254ed499, type: 3}
   currColor: {r: 0, g: 0, b: 0, a: 0}

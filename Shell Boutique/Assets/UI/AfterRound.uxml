@@ -1,6 +1,6 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/AfterRound.uss?fileID=7433441132597879392&amp;guid=1fc3cae94d379b34c99a771083a43ed2&amp;type=3#AfterRound"/>
-    <ui:VisualElement name="Panel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.69); padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%; align-items: center; justify-content: space-evenly;">
+    <ui:VisualElement name="Panel" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.69); padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%; align-items: center; justify-content: space-evenly; -unity-font-definition: url(&quot;project://database/Assets/Sprites/Abaddon_Fonts_v1.2/Abaddon%20Bold.ttf?fileID=12800000&amp;guid=ec12b9e34915ae24f9945ec6c97aa24f&amp;type=3#Abaddon Bold&quot;);">
         <ui:VisualElement name="Buffs" style="flex-grow: 0; width: 100%; height: 80%; align-items: center; flex-direction: row; justify-content: space-evenly; background-color: rgba(215, 55, 55, 0);"/>
         <ui:Button text="DONE" name="Done" class="SelectButton"/>
     </ui:VisualElement>
