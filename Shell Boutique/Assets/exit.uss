@@ -1,0 +1,35 @@
+:root {
+}
+
+.exitButton {
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-left-width: 6px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+}
+
+.exitButton:hover,
+.exitButton:active,
+.exitButton:focus {
+    background-color: rgb(256, 256, 256);
+    color: rgb(0, 0, 0);
+    border-left-color: rgb(256, 256, 256);
+    border-right-color: rgb(256, 256, 256);
+    border-top-color: rgb(256, 256, 256);
+    border-bottom-color: rgb(256, 256, 256);
+}
+
+.Disabled {
+    display: flex;
+    visibility: hidden;
+}

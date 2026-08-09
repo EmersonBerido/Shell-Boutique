@@ -28,7 +28,7 @@ public class DyeShell : Interactable
         else
             return;
         
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
+        AudioSource.PlayClipAtPoint(audioClip, transform.position, 3f);  
 
     } else if (Equipment.Instance.GetEquipped() == null && heldDyes.Count != 0 && heldShell != null) {
         // Receive Dyed Item

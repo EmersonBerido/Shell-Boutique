@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/exit.uss?fileID=7433441132597879392&amp;guid=0e6e6aac5448a1041954868128fe2838&amp;type=3#exit"/>
+    <ui:VisualElement name="Panel" style="flex-grow: 1; align-items: center; justify-content: space-evenly; background-color: rgb(0, 0, 0); -unity-font-definition: url(&quot;project://database/Assets/Sprites/Abaddon_Fonts_v1.2/Abaddon%20Bold.ttf?fileID=12800000&amp;guid=ec12b9e34915ae24f9945ec6c97aa24f&amp;type=3#Abaddon Bold&quot;); -unity-font-style: bold; -unity-text-align: middle-center;">
+        <ui:Label text="Ferrah&apos;s Spe-SHELL (get it shell haha im so funny) lasted for _ days before closing..." name="Text" style="color: rgb(255, 255, 255); font-size: 40%; white-space: pre-wrap; width: 60%;"/>
+        <ui:Button text="EXIT" name="Exit" class="exitButton Disabled" style="aspect-ratio: 1.777778; width: 123px; font-size: 46%; -unity-text-align: upper-center;"/>
+    </ui:VisualElement>
+</ui:UXML>

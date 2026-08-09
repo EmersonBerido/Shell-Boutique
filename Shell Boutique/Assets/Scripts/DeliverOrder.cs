@@ -68,7 +68,7 @@ public class DeliverOrder : Interactable
             GetOrder.Instance.FinishedOrder();
             OrderUI.Instance.RemoveOrder(matchedOrder);
             orders.Remove(matchedOrder);
-            AudioSource.PlayClipAtPoint(audioClip, transform.position);  
+            AudioSource.PlayClipAtPoint(audioClip, transform.position, 8f);  
         } else 
             Debug.Log("Found no matching orders");
         

@@ -20,6 +20,6 @@ public class GatherMaterial : Interactable
         // give obj to player equipped
         Equipment.Instance.Equip(obj);
 
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
+        AudioSource.PlayClipAtPoint(audioClip, transform.position, 2f);  
     }
 }

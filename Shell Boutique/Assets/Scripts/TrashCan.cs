@@ -6,6 +6,6 @@ public class TrashCan : Interactable
     public override void OnInteract()
     {
         Equipment.Instance.Unequip();
-        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
+        AudioSource.PlayClipAtPoint(audioClip, transform.position,4f);  
     }
 }

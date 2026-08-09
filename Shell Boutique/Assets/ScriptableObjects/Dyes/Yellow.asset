@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5b80076497087343b38a73f204d4887, type: 3}
   m_Name: Yellow
   m_EditorClassIdentifier: Assembly-CSharp::DyeObject
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  sprite: {fileID: -732957987256202325, guid: 0bb8a866ebd407444b22235f7358c0fc, type: 3}
   dyeName: Yellow
   color: {r: 0.9056604, g: 1, b: 0.14951938, a: 1}
