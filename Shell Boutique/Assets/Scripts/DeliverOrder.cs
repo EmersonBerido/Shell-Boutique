@@ -23,6 +23,7 @@ public class DeliverOrder : Interactable
     private Color purple;
 
     public List<Order> orders = new();
+    [SerializeField] private AudioClip audioClip;
 
     void Awake()
     {
@@ -67,6 +68,7 @@ public class DeliverOrder : Interactable
             GetOrder.Instance.FinishedOrder();
             OrderUI.Instance.RemoveOrder(matchedOrder);
             orders.Remove(matchedOrder);
+            AudioSource.PlayClipAtPoint(audioClip, transform.position);  
         } else 
             Debug.Log("Found no matching orders");
         

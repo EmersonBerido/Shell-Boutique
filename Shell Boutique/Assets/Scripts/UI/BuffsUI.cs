@@ -22,6 +22,8 @@ public class BuffsUI : MonoBehaviour
     [SerializeField] private Buff emptyBuff;
     Buff buffSelected = null;
     [SerializeField] private UIDocument uiDocument;
+    [SerializeField] private AudioClip selectSFX;
+    [SerializeField] private AudioClip doneSFX;
     
     void Start()
     {
@@ -66,7 +68,8 @@ public class BuffsUI : MonoBehaviour
         {
             if (buffSelected == null)
                 return;
-                
+
+            AudioSource.PlayClipAtPoint(doneSFX, transform.position, 2f);  
             ApplyBuff();
             uiDocument.enabled = false;  
             StartCoroutine(DayTimeUI.Instance.PrepareNewDay());
@@ -124,6 +127,8 @@ public class BuffsUI : MonoBehaviour
                 buff.RemoveFromClassList("Selected");
             }
             buffContainer.AddToClassList("Selected");
+
+            AudioSource.PlayClipAtPoint(selectSFX, transform.position, 2f);  
 
             SelectBuff(buff);
         });

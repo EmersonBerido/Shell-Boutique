@@ -7,6 +7,7 @@ using UnityEngine;
 public class GatherMaterial : Interactable
 {
     [SerializeField] private ScriptableObject material;
+    [SerializeField] private AudioClip audioClip;
 
     public override void OnInteract()
     {
@@ -18,5 +19,7 @@ public class GatherMaterial : Interactable
 
         // give obj to player equipped
         Equipment.Instance.Equip(obj);
+
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
     }
 }

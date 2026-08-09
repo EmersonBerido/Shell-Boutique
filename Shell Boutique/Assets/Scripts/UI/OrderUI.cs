@@ -7,6 +7,7 @@ public class OrderUI : MonoBehaviour
 {
     public static OrderUI Instance {get; private set;}
     [SerializeField] private UIDocument uiDocument;
+    [SerializeField] private AudioClip audioClip;
 
     void Awake()
     {
@@ -33,6 +34,8 @@ public class OrderUI : MonoBehaviour
         FillMaterials(orderContainer, order.shell.recipe);
         
         container.Add(orderParent);
+
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
     }
 
     public void RemoveOrder(Order order)

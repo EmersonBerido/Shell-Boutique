@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TrashCan
   popupUI: {fileID: 4345542772184768118}
   interactAction: {fileID: -7176863066040308787, guid: c158d0aed9e58614db9f6b0d51ee6471, type: 3}
+  audioClip: {fileID: 8300000, guid: f155c3ce4b8210040b504b8bcc314ea0, type: 3}
 --- !u!1001 &1692870395984506391
 PrefabInstance:
   m_ObjectHideFlags: 0

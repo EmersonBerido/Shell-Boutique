@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+[RequireComponent(typeof(AudioSource))]
 public class Smelt : Interactable
 {
     [SerializeField] private List<ShellObject> shellRecipes;
@@ -16,6 +16,7 @@ public class Smelt : Interactable
     [SerializeField] private float smeltTime = 8f;
     private bool isSmelting = false;
     private bool isHoldingShell = false;
+    private AudioSource audioSource;
 
     [Header("Indicators")]
     [SerializeField] private SpriteRenderer indicatorSR;
@@ -25,6 +26,7 @@ public class Smelt : Interactable
     void Start()
     {
         itemsHeld = new();
+        audioSource = GetComponent<AudioSource>();
 
         /* TESTING */
         // itemsHeld = testInventory;
@@ -57,6 +59,7 @@ public class Smelt : Interactable
         } else if (Equipment.Instance.GetEquipped() == null && itemsHeld.Count > 0)
         {
             // start creating shell
+            audioSource.Play();
             StartCoroutine(StartSmelting());
 
         } else if (Equipment.Instance.GetEquipped() != null)
@@ -79,6 +82,9 @@ public class Smelt : Interactable
         indicatorSR.enabled = true;
         indicatorSR.sprite = activeSprite;
         yield return new WaitForSeconds(smeltTime);
+
+        if (audioSource.isPlaying)
+            audioSource.Stop();
 
         indicatorSR.sprite = finishedSprite;
         isSmelting = false;

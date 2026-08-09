@@ -10,6 +10,7 @@ public class DyeShell : Interactable
     private List<DyeObject> heldDyes;
     private ShellObject heldShell;
     [SerializeField] int maxDyeCount = 2;
+    [SerializeField] private AudioClip audioClip;
 
     void Start()
     {
@@ -24,6 +25,10 @@ public class DyeShell : Interactable
             HoldDye((DyeObject)Equipment.Instance.GetEquipped());
         else if (Equipment.Instance.GetEquipped().GetType() == typeof(ShellObject))
             HoldShell((ShellObject)Equipment.Instance.GetEquipped());
+        else
+            return;
+        
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);  
 
     } else if (Equipment.Instance.GetEquipped() == null && heldDyes.Count != 0 && heldShell != null) {
         // Receive Dyed Item
