@@ -7,4 +7,5 @@
     color: rgb(0, 0, 0);
     background-color: rgb(142, 90, 29);
     -unity-font-definition: url("project://database/Assets/Sprites/Abaddon_Fonts_v1.2/Abaddon%20Bold.ttf?fileID=12800000&guid=ec12b9e34915ae24f9945ec6c97aa24f&type=3#Abaddon Bold");
+    margin-right: 11%;
 }

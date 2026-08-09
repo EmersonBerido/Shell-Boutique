@@ -29,3 +29,7 @@
 .Disabled {
     visibility: hidden;
 }
+
+.container {
+    gap : 10%;
+}

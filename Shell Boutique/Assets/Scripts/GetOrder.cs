@@ -14,6 +14,7 @@ public class GetOrder : MonoBehaviour
     [SerializeField] private float orderIntervals = 15f;
     [SerializeField] private int MinOrders = 10;
     [SerializeField] private int MaxOrders = 15;
+    [SerializeField] private int MaxUIOrders = 5;
 
     [Header("Orders")]
     [SerializeField] List<ShellObject> shells;
@@ -85,13 +86,26 @@ public class GetOrder : MonoBehaviour
     // HELPER FUNCTIONS
     IEnumerator RoundRoutine()
     {
+        List<Order> copy = new(OrdersThisRound);
+        int idx = 0;
+        while (idx < copy.Count)
+        {
+            if (OrderUI.Instance.CurrentOrderCount() >= MaxUIOrders)
+            {
+                yield return new WaitForSeconds(1f);
+                continue;
+            }
+            
+            DeliverOrder.Instance.AddOrder(copy[idx]);
+            Debug.Log($"adding new order of {copy[idx]}");
+            OrderUI.Instance.AddOrder(copy[idx]);
+            yield return new WaitForSeconds(orderIntervals);
+            idx += 1;
+            
+        }
 
         foreach (var order in OrdersThisRound)
         {
-            DeliverOrder.Instance.AddOrder(order);
-            Debug.Log($"adding new order of {order}");
-            OrderUI.Instance.AddOrder(order);
-            yield return new WaitForSeconds(orderIntervals);
         }
         yield return null;
     }

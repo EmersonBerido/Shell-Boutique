@@ -1,10 +1,11 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/Order.uss?fileID=7433441132597879392&amp;guid=51177f2f8f90f3d4c966a9a8497a9926&amp;type=3#Order"/>
-    <ui:VisualElement name="Order" class="Order" style="align-items: center;">
-        <ui:VisualElement name="MaterialContainer" style="flex-grow: 0; width: 100%; align-items: center; justify-content: space-between; flex-direction: row; font-size: 51%; height: 109px;">
-            <ui:Label text="Iron&#10;Steel&#10;Rainbows " name="Materials" style="-unity-text-align: middle-left;"/>
-            <ui:Label text="1&#10;2&#10;3" name="Amount" style="-unity-text-align: middle-right;"/>
+    <ui:VisualElement name="Order" class="Order" style="align-items: center; justify-content: space-evenly;">
+        <ui:VisualElement name="MaterialContainer" style="flex-grow: 0; width: 100%; align-items: center; justify-content: space-between; flex-direction: row; font-size: 51%; height: 59%;">
+            <ui:Label text="Iron&#10;Steel&#10;Rainbows " name="Materials" style="-unity-text-align: middle-left; -unity-font-style: bold;"/>
+            <ui:Label text="1&#10;2&#10;3" name="Amount" style="-unity-text-align: middle-center; -unity-font-style: bold;"/>
         </ui:VisualElement>
-        <ui:Image source="project://database/Resources/unity_builtin_extra?fileID=10913&amp;guid=0000000000000000f000000000000000&amp;type=0#Knob" name="Image" style="aspect-ratio: 1; width: 25%;"/>
+        <ui:Label text="Label" name="Color" style="font-size: 29%; -unity-font-style: bold;"/>
+        <ui:Image source="project://database/Assets/Sprites/shells.png?fileID=-2405055856156029957&amp;guid=53ead6058792ea349b1a43e6254ed499&amp;type=3#shells_0" name="Image" style="aspect-ratio: 1; width: 25%;"/>
     </ui:VisualElement>
 </ui:UXML>

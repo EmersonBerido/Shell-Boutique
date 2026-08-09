@@ -30,7 +30,8 @@ public class OrderUI : MonoBehaviour
         var orderParent = new OrderComponent();
         var orderContainer = orderParent.Q<VisualElement>("Order");
         orderParent.style.height = new Length(100, LengthUnit.Percent);
-        orderContainer.Q<Image>("Image").tintColor = GetColor(order.color);
+        orderContainer.Q<Image>("Image").sprite = order.shell.sprite;
+        orderContainer.Q<Label>("Color").text = GetColorName(order.color);
         FillMaterials(orderContainer, order.shell.recipe);
         
         container.Add(orderParent);
@@ -53,6 +54,15 @@ public class OrderUI : MonoBehaviour
                 break;
             }
         }
+    }
+
+    public int CurrentOrderCount()
+    {
+        var container = uiDocument.rootVisualElement.
+            Q<VisualElement>("Panel").
+            Q<VisualElement>("OrdersContainer");
+
+        return container.Query<OrderComponent>().ToList().Count;
     }
 
     private bool VerifyMaterials(VisualElement container, Order order)
@@ -102,6 +112,8 @@ public class OrderUI : MonoBehaviour
     {
         if (GetShellColor(container.Q<Image>("Image").tintColor) == order.color) 
             return true;
+        else if (container.Q<Label>("Color").text.Equals(GetColorName(order.color)))
+            return true;
         return false;
     }
 
@@ -135,6 +147,22 @@ public class OrderUI : MonoBehaviour
             Order.ShellColors.Green => Color.green,
             Order.ShellColors.Orange => Color.orange,
             _ => Color.white
+                
+        };
+    }
+
+    private string GetColorName(Order.ShellColors color)
+    {
+        return color switch
+        {
+            Order.ShellColors.None => "White",
+            Order.ShellColors.Red => "Red",
+            Order.ShellColors.Purple => "Purple",
+            Order.ShellColors.Yellow => "Yellow",
+            Order.ShellColors.Blue => "Blue",
+            Order.ShellColors.Green => "Green",
+            Order.ShellColors.Orange => "Orange",
+            _ => "White"
                 
         };
     }
