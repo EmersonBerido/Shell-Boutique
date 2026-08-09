@@ -12,6 +12,11 @@ public class DyeShell : Interactable
     [SerializeField] int maxDyeCount = 2;
     [SerializeField] private AudioClip audioClip;
 
+    [Header("Indicators")]
+    [SerializeField] private GameObject[] indicatorParents;
+    [SerializeField] private SpriteRenderer[] indicatorSR;
+    private int itemsHeld = 0;
+
     void Start()
     {
         heldDyes = new();
@@ -20,13 +25,24 @@ public class DyeShell : Interactable
   {
     if (Equipment.Instance.GetEquipped() != null) {
         // add to held
-        Debug.Log("Adding to held");
+
         if (Equipment.Instance.GetEquipped().GetType() == typeof(DyeObject))
             HoldDye((DyeObject)Equipment.Instance.GetEquipped());
         else if (Equipment.Instance.GetEquipped().GetType() == typeof(ShellObject))
             HoldShell((ShellObject)Equipment.Instance.GetEquipped());
         else
             return;
+        
+        
+        indicatorParents[itemsHeld].SetActive(true);
+        indicatorSR[itemsHeld].sprite = 
+            Equipment.Instance.GetEquipped().GetType() == typeof(DyeObject) ?
+                ((DyeObject)Equipment.Instance.GetEquipped()).sprite :
+                ((ShellObject)Equipment.Instance.GetEquipped()).sprite;
+        itemsHeld += 1;
+
+        // need to move unequip here
+        Equipment.Instance.Unequip();
         
         AudioSource.PlayClipAtPoint(audioClip, transform.position, 3f);  
 
@@ -42,6 +58,10 @@ public class DyeShell : Interactable
 
         heldShell = null;
         heldDyes.Clear();
+        itemsHeld = 0;
+
+        foreach (var obj in indicatorParents)
+            obj.SetActive(false);
     }
   }
 
@@ -51,7 +71,6 @@ public class DyeShell : Interactable
             return;
         
         heldDyes.Add(dye);
-        Equipment.Instance.Unequip();
     }
 
     private void HoldShell(ShellObject shell)
@@ -60,7 +79,6 @@ public class DyeShell : Interactable
             return;
         
         heldShell = shell;
-        Equipment.Instance.Unequip();
     }
 
     private Color MixColor(Color a, Color b)
