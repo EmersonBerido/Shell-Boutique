@@ -34,7 +34,7 @@ public class StatManager : MonoBehaviour
   // Verification Methods
   public bool CanPlayerSpeedIncrease() => basePlayerSpeed <= maxPlayerSpeed;
   public bool CanFurnaceSpeedIncrease() => baseFurnaceSpeed >= minFurnaceSpeed;
-  public bool CanAddFurnace() => furnaceCount > furnaces.Count;
+  public bool CanAddFurnace() => furnaceCount < furnaces.Count;
 
   // Stat Modifier Methods
   public void IncreasePlayerSpeed(float percentage)

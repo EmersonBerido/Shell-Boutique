@@ -39,6 +39,7 @@ public class GetOrder : MonoBehaviour
     public void StartNewRound()
     {
         // Reset
+        IncreaseDifficulty();
         OrdersThisRound = CreateNewOrders();
         totalOrdersThisRound = OrdersThisRound.Count;
         ordersCompletedThisRound = 0;
@@ -65,6 +66,20 @@ public class GetOrder : MonoBehaviour
             BuffsUI.Instance.LayoutBuffs();
             
         }
+    }
+
+    private void IncreaseMaxOrders() => MaxOrders += 1;
+    private void IncreaseMinOrders() => MinOrders += 1;
+    private void DecreaseInterval() => orderIntervals = Mathf.Max(2f, orderIntervals - 0.5f);
+    public void IncreaseDifficulty()
+    {
+        float chance = Random.Range(0, 1);
+        if (chance < 0.33f || MinOrders >= MaxOrders)
+            IncreaseMaxOrders();
+        else if (chance < 0.66f)
+            IncreaseMinOrders();
+        else 
+            DecreaseInterval();
     }
 
     // HELPER FUNCTIONS

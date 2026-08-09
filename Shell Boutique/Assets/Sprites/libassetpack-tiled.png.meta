@@ -278,7 +278,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: libassetpack-tiled_0
+      name: plant2
       rect:
         serializedVersion: 2
         x: 27
@@ -300,7 +300,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_1
+      name: plant3
       rect:
         serializedVersion: 2
         x: 51
@@ -564,7 +564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_13
+      name: pot
       rect:
         serializedVersion: 2
         x: 27
@@ -586,13 +586,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_14
+      name: plant1
       rect:
         serializedVersion: 2
         x: 29
         y: 407
         width: 38
-        height: 73
+        height: 49
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1312,7 +1312,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_47
+      name: SideShelf
       rect:
         serializedVersion: 2
         x: 311
@@ -1553,6 +1553,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: plant4
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 457
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0dccd9dcb0ba294a9ba05df8d928406
+      internalID: 2065027213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -1567,14 +1589,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      SideShelf: -4923281688195343218
       Wall: 484164313
-      libassetpack-tiled_0: 1347335598810014562
-      libassetpack-tiled_1: -2991784112202066352
       libassetpack-tiled_10: 6248776014870995198
       libassetpack-tiled_11: -5702326942611180085
       libassetpack-tiled_12: 6871276447553606636
-      libassetpack-tiled_13: 8003743875321738290
-      libassetpack-tiled_14: 5417962110111649222
       libassetpack-tiled_15: -796741991087247476
       libassetpack-tiled_16: -6367016132024835740
       libassetpack-tiled_17: -5038100499744222704
@@ -1610,7 +1629,6 @@ TextureImporter:
       libassetpack-tiled_44: 6527610360290115059
       libassetpack-tiled_45: 4623234787606742475
       libassetpack-tiled_46: -6263064486775697565
-      libassetpack-tiled_47: -4923281688195343218
       libassetpack-tiled_48: -562623059354611977
       libassetpack-tiled_49: 175581517461172504
       libassetpack-tiled_5: 7379901530519815145
@@ -1623,6 +1641,11 @@ TextureImporter:
       libassetpack-tiled_7: 3073602554295877186
       libassetpack-tiled_8: 4560428305050179684
       libassetpack-tiled_9: 8675400021536737875
+      plant1: 5417962110111649222
+      plant2: 1347335598810014562
+      plant3: -2991784112202066352
+      plant4: 2065027213
+      pot: 8003743875321738290
       shelf: 4373643054350695925
       sign: -841903535
   mipmapLimitGroupName: 

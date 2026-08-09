@@ -995,7 +995,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_30
+      name: WallShelfLong
       rect:
         serializedVersion: 2
         x: 129
@@ -1017,7 +1017,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_31
+      name: WallshelfMedium
       rect:
         serializedVersion: 2
         x: 256
@@ -1039,7 +1039,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_32
+      name: WallShelfShort
       rect:
         serializedVersion: 2
         x: 320
@@ -1743,7 +1743,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_64
+      name: Trash
       rect:
         serializedVersion: 2
         x: 55
@@ -1765,10 +1765,10 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_65
+      name: TrashOpen
       rect:
         serializedVersion: 2
-        x: 97
+        x: 98
         y: 190
         width: 46
         height: 34
@@ -2022,9 +2022,6 @@ TextureImporter:
       Gritty Kitchen Interior Pack_28: -6317611625178452563
       Gritty Kitchen Interior Pack_29: 2399447202051685855
       Gritty Kitchen Interior Pack_3: 7502732496852813512
-      Gritty Kitchen Interior Pack_30: -7406107471074707949
-      Gritty Kitchen Interior Pack_31: 8778451742093482849
-      Gritty Kitchen Interior Pack_32: -6710401911991484395
       Gritty Kitchen Interior Pack_33: -1029963781944758285
       Gritty Kitchen Interior Pack_34: 2128720042168606108
       Gritty Kitchen Interior Pack_35: -6060722559849861527
@@ -2059,8 +2056,6 @@ TextureImporter:
       Gritty Kitchen Interior Pack_61: -586781957094808365
       Gritty Kitchen Interior Pack_62: -3402145277341696882
       Gritty Kitchen Interior Pack_63: 3316667564271038289
-      Gritty Kitchen Interior Pack_64: -8927182060213445920
-      Gritty Kitchen Interior Pack_65: 6187665771149579119
       Gritty Kitchen Interior Pack_66: -7026609360313719662
       Gritty Kitchen Interior Pack_67: 4566399121127759130
       Gritty Kitchen Interior Pack_68: -1957872980089655309
@@ -2073,6 +2068,11 @@ TextureImporter:
       Gritty Kitchen Interior Pack_74: -3484048118484267286
       Gritty Kitchen Interior Pack_8: 5172452500738767984
       Gritty Kitchen Interior Pack_9: -5006193496506885965
+      Trash: -8927182060213445920
+      TrashOpen: 6187665771149579119
+      WallShelfLong: -7406107471074707949
+      WallShelfShort: -6710401911991484395
+      WallshelfMedium: 8778451742093482849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

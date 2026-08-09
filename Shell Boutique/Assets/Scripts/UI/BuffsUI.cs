@@ -64,9 +64,12 @@ public class BuffsUI : MonoBehaviour
         // add done button logic
         doneButton.clicked += () =>
         {
-          ApplyBuff();
-          uiDocument.enabled = false;  
-          StartCoroutine(DayTimeUI.Instance.PrepareNewDay());
+            if (buffSelected == null)
+                return;
+                
+            ApplyBuff();
+            uiDocument.enabled = false;  
+            StartCoroutine(DayTimeUI.Instance.PrepareNewDay());
         };
 
     }
