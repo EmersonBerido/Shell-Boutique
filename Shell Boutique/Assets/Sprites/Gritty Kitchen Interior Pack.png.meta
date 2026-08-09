@@ -1897,7 +1897,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gritty Kitchen Interior Pack_71
+      name: longTable
       rect:
         serializedVersion: 2
         x: 51
@@ -2062,7 +2062,6 @@ TextureImporter:
       Gritty Kitchen Interior Pack_69: -5707690275835519294
       Gritty Kitchen Interior Pack_7: 7123976051187357302
       Gritty Kitchen Interior Pack_70: -6358094141420224195
-      Gritty Kitchen Interior Pack_71: 5216803790900143266
       Gritty Kitchen Interior Pack_72: 6455853965148661991
       Gritty Kitchen Interior Pack_73: -8053087325450913983
       Gritty Kitchen Interior Pack_74: -3484048118484267286
@@ -2073,6 +2072,7 @@ TextureImporter:
       WallShelfLong: -7406107471074707949
       WallShelfShort: -6710401911991484395
       WallshelfMedium: 8778451742093482849
+      longTable: 5216803790900143266
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

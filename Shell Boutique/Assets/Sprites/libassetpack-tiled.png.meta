@@ -366,7 +366,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_4
+      name: BookPile2
       rect:
         serializedVersion: 2
         x: 239
@@ -410,7 +410,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_6
+      name: Book1
       rect:
         serializedVersion: 2
         x: 359
@@ -476,7 +476,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_9
+      name: carpet
       rect:
         serializedVersion: 2
         x: 455
@@ -498,7 +498,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_10
+      name: chair
       rect:
         serializedVersion: 2
         x: 671
@@ -674,7 +674,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_18
+      name: box1
       rect:
         serializedVersion: 2
         x: 167
@@ -718,7 +718,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_20
+      name: Book2
       rect:
         serializedVersion: 2
         x: 359
@@ -784,7 +784,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_23
+      name: BookPile1
       rect:
         serializedVersion: 2
         x: 239
@@ -828,7 +828,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_25
+      name: Bookpile3
       rect:
         serializedVersion: 2
         x: 360
@@ -916,7 +916,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_29
+      name: Book3
       rect:
         serializedVersion: 2
         x: 360
@@ -1004,7 +1004,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_33
+      name: lamp
       rect:
         serializedVersion: 2
         x: 623
@@ -1048,7 +1048,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_35
+      name: BoxesPile
       rect:
         serializedVersion: 2
         x: 167
@@ -1400,7 +1400,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_51
+      name: SmallTable
       rect:
         serializedVersion: 2
         x: 263
@@ -1488,7 +1488,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: libassetpack-tiled_55
+      name: BookShelf
       rect:
         serializedVersion: 2
         x: 387
@@ -1562,7 +1562,7 @@ TextureImporter:
         width: 15
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1589,39 +1589,43 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Book1: -8901701552369382620
+      Book2: 5166933413650264062
+      Book3: -592510510889625968
+      BookPile1: 1128266471787657982
+      BookPile2: -3668606451183642190
+      BookShelf: 8224526713247492723
+      Bookpile3: 9079429209113936628
+      BoxesPile: 3486627857685232991
       SideShelf: -4923281688195343218
+      SmallTable: 3067300254333382047
       Wall: 484164313
-      libassetpack-tiled_10: 6248776014870995198
+      box1: 7525347552297111101
+      carpet: 8675400021536737875
+      chair: 6248776014870995198
+      lamp: -8471438018957778165
       libassetpack-tiled_11: -5702326942611180085
       libassetpack-tiled_12: 6871276447553606636
       libassetpack-tiled_15: -796741991087247476
       libassetpack-tiled_16: -6367016132024835740
       libassetpack-tiled_17: -5038100499744222704
-      libassetpack-tiled_18: 7525347552297111101
       libassetpack-tiled_19: 8214128557657210929
       libassetpack-tiled_2: 7562071239902097661
-      libassetpack-tiled_20: 5166933413650264062
       libassetpack-tiled_21: 7237734970645089166
       libassetpack-tiled_22: 3574037756407161869
-      libassetpack-tiled_23: 1128266471787657982
       libassetpack-tiled_24: -4919765116338765758
-      libassetpack-tiled_25: 9079429209113936628
       libassetpack-tiled_26: -6454788881421586990
       libassetpack-tiled_27: 8056573630387349766
       libassetpack-tiled_28: 2081071855924430813
-      libassetpack-tiled_29: -592510510889625968
       libassetpack-tiled_3: 7884434577139374878
       libassetpack-tiled_30: 3674824670784906113
       libassetpack-tiled_31: 5463347926573780101
       libassetpack-tiled_32: 2635578140971347498
-      libassetpack-tiled_33: -8471438018957778165
       libassetpack-tiled_34: 8905142867217290338
-      libassetpack-tiled_35: 3486627857685232991
       libassetpack-tiled_36: 7195794589501236559
       libassetpack-tiled_37: 2471213866792777289
       libassetpack-tiled_38: 7151674775910219766
       libassetpack-tiled_39: 1914651705553019624
-      libassetpack-tiled_4: -3668606451183642190
       libassetpack-tiled_40: -4666775638144523040
       libassetpack-tiled_41: 1175317356616059307
       libassetpack-tiled_42: 3509691463099998549
@@ -1633,14 +1637,10 @@ TextureImporter:
       libassetpack-tiled_49: 175581517461172504
       libassetpack-tiled_5: 7379901530519815145
       libassetpack-tiled_50: -3643841128954696121
-      libassetpack-tiled_51: 3067300254333382047
       libassetpack-tiled_53: -4671863912046110183
       libassetpack-tiled_54: -113440269813944621
-      libassetpack-tiled_55: 8224526713247492723
-      libassetpack-tiled_6: -8901701552369382620
       libassetpack-tiled_7: 3073602554295877186
       libassetpack-tiled_8: 4560428305050179684
-      libassetpack-tiled_9: 8675400021536737875
       plant1: 5417962110111649222
       plant2: 1347335598810014562
       plant3: -2991784112202066352
